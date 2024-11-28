@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
+import { insertEmployee } from '../services/EmployeeService'
+
 
 const EmployeeComponent = () => {
   const[name,setName]=useState('')
@@ -9,7 +11,11 @@ const EmployeeComponent = () => {
    const saveEmployee = (e) => {
       e.preventDefault();
       const employee={name,email};
-      console.log(employee);
+      console.info(employee);
+      insertEmployee(employee).then((response)=>{
+        console.log(response.data);
+        navigator('/employee');
+      })
   }
   const cannelEmployee = () => {
     navigator('/employee')
