@@ -1,8 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Welcome from './Welcome'
 import ListEmployeeComponent from './components/ListEmployeeComponent'
 import HeadComponent from './components/HeadComponent'
 import FooterComponent from './components/FooterComponent'
@@ -24,6 +21,8 @@ function App() {
           <Route path='/employee' element={<ListEmployeeComponent />}></Route>
           {/* http://localhost:3000/add-employee */}
           <Route path='/add-employee' element={<EmployeeComponent/>}></Route>
+          {/* http://localhost:3000/edit-employee */}
+          <Route path='/edit-employee/:id' element={<EmployeeComponent/>}></Route>
         </Routes>
         <FooterComponent />
       </BrowserRouter>
