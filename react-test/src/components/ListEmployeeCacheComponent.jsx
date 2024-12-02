@@ -1,8 +1,8 @@
 import React ,{useEffect, useState} from 'react'
-import { listEmployees,deleteEmployee } from '../services/EmployeeService'
+import { ListEmployeeCache,deleteEmployee } from '../services/EmployeeService'
 import {useNavigate} from 'react-router-dom'
 
-const ListEmployeeComponent = () => {
+const ListEmployeeCacheComponent = () => {
     
     const navigator=useNavigate();
     
@@ -12,7 +12,7 @@ const ListEmployeeComponent = () => {
     },[])
 
     function getAllEmployees(){
-        listEmployees().then((response)=>{
+        ListEmployeeCache().then((response)=>{
             setEmployees(response.data);
         }).catch(error=>{
             console.error(error);
@@ -36,7 +36,7 @@ const ListEmployeeComponent = () => {
     }
   return (
     <div className='container'> 
-        <h1 className='text-center'>List of Employees</h1>
+        <h1 className='text-center'>List of Employees Cache</h1>
         <button className='btn btn-primary mb-2' onClick={addNewEmployee}>Add Employee</button>
         <table className='table table-striped table-bordered'>
             <thead>
@@ -54,7 +54,6 @@ const ListEmployeeComponent = () => {
                                 <td>{employee.id}</td>
                                 <td>{employee.name}</td>
                                 <td>{employee.email}</td>
-                                <td>{employee.create_date}</td>
                                 <td width="17%">
                                     <button className='btn btn-info mb-2' onClick={()=>editEmployee(employee.id)}>update</button>
                                     <button className='btn btn-danger mb-2'onClick={()=>removeEmployee(employee.id)}>delete</button>
@@ -70,4 +69,4 @@ const ListEmployeeComponent = () => {
   )
 }
 
-export default ListEmployeeComponent
+export default ListEmployeeCacheComponent

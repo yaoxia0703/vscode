@@ -18,6 +18,9 @@ const HeadComponent = () => {
                 <li className="nav-item">
                   <a className="nav-link" href="/employee">Employee List</a>
                 </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/employeeCache">Employee List Cache</a>
+                </li>
 
               </ul>
             </div>

@@ -12,3 +12,7 @@ export const getEmployee=(employeeId)=>axios.get(REST_API_BASE_URL+"/getEmployee
 export const updateEmployee=(exployee)=>axios.put(REST_API_BASE_URL+"/edit",exployee);
 
 export const deleteEmployee=(employeeId)=>axios.delete(REST_API_BASE_URL+"/delete?id="+employeeId)
+
+export const ListEmployeeCache= () => {
+    return axios.get(REST_API_BASE_URL+"/cache")
+}

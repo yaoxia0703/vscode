@@ -6,6 +6,7 @@ import FooterComponent from './components/FooterComponent'
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import IndexComponent from './components/IndexComponent'
 import EmployeeComponent from './components/EmployeeComponent'
+import ListEmployeeCacheComponent from './components/ListEmployeeCacheComponent' 
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +24,7 @@ function App() {
           <Route path='/add-employee' element={<EmployeeComponent/>}></Route>
           {/* http://localhost:3000/edit-employee */}
           <Route path='/edit-employee/:id' element={<EmployeeComponent/>}></Route>
+          <Route path='/employeeCache' element={<ListEmployeeCacheComponent/>}></Route>
         </Routes>
         <FooterComponent />
       </BrowserRouter>
